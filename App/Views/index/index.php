@@ -1,13 +1,33 @@
-<h1>Index</h1>
-<hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>Produtos</h1><br>
 
-<?php
-  // echo "<pre>";
-  // print_r($this->view->dados);
-  // echo"</pre>";
-  foreach($this->view->dados as $indice => $produto) {
-    echo $produto['id'] . ' - ' . $produto['descricao'] . ' - ' . $produto['preco'] .'<br>';
-    
-  }
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Produto</th>
+      <th scope="col">Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+<?php 
+  foreach($this->view->dados as $produtos => $produto) {?>
+    <tr>
+      <th scope="row"><?=$produto['id']?></th>
+      <td><?= $produto['descricao'] ?></td>
+      <td><?= $produto['preco'] ?></td>
+    </tr>
+    <?php } ?>
+  </tbody>
+</table>
 
-?>
+</body>
+</html>
+
